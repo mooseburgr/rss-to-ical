@@ -10,3 +10,8 @@ _BUT_ if you do, you can use this Google Cloud Function to do this content massa
 
 
 (e.g. [`https://us-central1-absolute-pulsar-301701.cloudfunctions.net/convert-rss-to-ical-go?rssUrl=https://demo.theeventscalendar.com/events/feed/&eventDuration=50`](https://us-central1-absolute-pulsar-301701.cloudfunctions.net/convert-rss-to-ical-go?rssUrl=https://demo.theeventscalendar.com/events/feed/&eventDuration=50))
+
+
+Credit to the following packages doing about 99.9% of the work:
+ - https://github.com/mmcdole/gofeed
+ - https://github.com/arran4/golang-ical
