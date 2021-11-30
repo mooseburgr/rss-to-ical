@@ -12,6 +12,8 @@ import (
 
 const validRssUrl = "https://demo.theeventscalendar.com/events/feed/"
 
+// const validRssUrl = "https://feeds.twit.tv/twit.xml"
+
 func TestHandler(t *testing.T) {
 	req := httptest.NewRequest(http.MethodGet, "/rss-to-ical?rssUrl="+validRssUrl, nil)
 	w := httptest.NewRecorder()

@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"net/url"
 	"strconv"
+	"strings"
 	"time"
 
 	ical "github.com/arran4/golang-ical"
@@ -69,7 +70,6 @@ func doConvert(rssUrl string, eventDuration int) (*ical.Calendar, error) {
 
 	// copy events
 	for _, item := range feed.Items {
-		// log.Print(item)
 		event := cal.AddEvent(item.GUID)
 		event.SetStartAt(*item.PublishedParsed)
 		event.SetEndAt(item.PublishedParsed.Add(time.Minute * time.Duration(eventDuration)))
@@ -77,9 +77,21 @@ func doConvert(rssUrl string, eventDuration int) (*ical.Calendar, error) {
 		event.SetDescription(item.Description)
 		event.SetLocation(item.Link)
 		event.SetURL(item.Link)
-
-		event.SetOrganizer(fmt.Sprintf("%v", item.Authors))
+		event.SetOrganizer(authorsToOrganizer(item.Authors))
 	}
 
 	return cal, nil
+}
+
+func authorsToOrganizer(authors []*gofeed.Person) string {
+	var result []string
+	for _, author := range authors {
+		if strings.TrimSpace(author.Email) == "" {
+			result = append(result, strings.TrimSpace(author.Name))
+		} else {
+			result = append(result, fmt.Sprintf("%s (%s)",
+				strings.TrimSpace(author.Name), strings.TrimSpace(author.Email)))
+		}
+	}
+	return strings.Join(result, ", ")
 }
