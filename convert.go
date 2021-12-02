@@ -14,8 +14,9 @@ import (
 	"github.com/mmcdole/gofeed"
 )
 
-// Fetches RSS feed of events located at request param "rssUrl" and converts
-// to iCal format with the specified "eventDuration," defaulting to 60 minutes
+// HandleRequest Fetches RSS feed of events located at request param "rssUrl" and
+// converts to iCal format with the specified "eventDuration," defaulting to 60
+// minutes
 func HandleRequest(w http.ResponseWriter, r *http.Request) {
 
 	// validate URL param
