@@ -31,6 +31,8 @@ func HandleRequest(w http.ResponseWriter, r *http.Request) {
 		eventDuration = 60
 	}
 
+	fmt.Printf("Handling params %s, %d from remote address '%s'", rssUrl, eventDuration, r.RemoteAddr)
+
 	cal, err := doConvert(rssUrl, eventDuration)
 
 	if err != nil {
