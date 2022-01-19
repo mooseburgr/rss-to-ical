@@ -1,1 +1,19 @@
-
+steps:
+- name: golang
+  args: ['go', 'version']
+- name: golang
+  args: ['go', 'test']
+  dir: 'backend'
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:
+  - gcloud
+  - functions
+  - deploy
+  - convert-rss-to-ical-go
+  - --region=us-central1
+  - --source=/
+  - --trigger-http
+  - --runtime=go116
+  - --entry-point=HandleRequest
+options:
+  logging: CLOUD_LOGGING_ONLY
