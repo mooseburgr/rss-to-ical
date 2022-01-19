@@ -3,7 +3,7 @@ steps:
   args: ['go', 'version']
 - name: golang
   args: ['go', 'test']
-  dir: 'backend'
+  dir: './...'
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   args:
   - gcloud
