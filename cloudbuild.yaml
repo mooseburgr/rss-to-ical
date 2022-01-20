@@ -10,7 +10,6 @@ steps:
   - deploy
   - convert-rss-to-ical-go
   - --region=us-central1
-  - --source=/
   - --trigger-http
   - --runtime=go116
   - --entry-point=HandleRequest
