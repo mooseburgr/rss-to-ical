@@ -2,7 +2,7 @@ steps:
 - name: golang
   args: ['go', 'version']
 - name: golang
-  args: ['go', 'test', './...']
+  args: ['go', 'test']
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   args:
   - gcloud

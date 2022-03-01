@@ -31,7 +31,8 @@ func HandleRequest(w http.ResponseWriter, r *http.Request) {
 		eventDuration = 60
 	}
 
-	fmt.Printf("Handling params %s, %d from remote address '%s'", rssUrl, eventDuration, r.RemoteAddr)
+	fmt.Printf("Handling params %s, %d from remote address '%s'",
+		rssUrl, eventDuration, GetIpAddress(r))
 
 	cal, err := doConvert(rssUrl, eventDuration)
 
@@ -97,4 +98,13 @@ func authorsToOrganizer(authors []*gofeed.Person) string {
 		}
 	}
 	return strings.Join(result, ", ")
+}
+
+func GetIpAddress(r *http.Request) string {
+	xffs := r.Header["X-Forwarded-For"]
+	if len(xffs) > 0 {
+		return xffs[0]
+	} else {
+		return r.RemoteAddr
+	}
 }
