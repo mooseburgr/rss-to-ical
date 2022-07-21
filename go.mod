@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/GoogleCloudPlatform/functions-framework-go v1.5.3
-	github.com/arran4/golang-ical v0.0.0-20220220103556-c519bf07e7e6
+	github.com/arran4/golang-ical v0.0.0-20220517104411-fd89fefb0182
 	github.com/mmcdole/gofeed v1.1.3
 )
 
