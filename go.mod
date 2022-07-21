@@ -1,6 +1,6 @@
 module github.com/mooseburgr/rss-to-ical-go
 
-go 1.17
+go 1.18
 
 require (
 	github.com/GoogleCloudPlatform/functions-framework-go v1.5.3
