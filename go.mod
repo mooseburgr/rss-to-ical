@@ -3,7 +3,7 @@ module github.com/mooseburgr/rss-to-ical-go
 go 1.19
 
 require (
-	github.com/GoogleCloudPlatform/functions-framework-go v1.5.3
+	github.com/GoogleCloudPlatform/functions-framework-go v1.6.0
 	github.com/arran4/golang-ical v0.0.0-20220517104411-fd89fefb0182
 	github.com/mmcdole/gofeed v1.1.3
 )
