@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/GoogleCloudPlatform/functions-framework-go v1.6.1
 	github.com/arran4/golang-ical v0.0.0-20221122102835-109346913e54
-	github.com/mmcdole/gofeed v1.1.3
+	github.com/mmcdole/gofeed v1.2.0
 )
 
 require (
