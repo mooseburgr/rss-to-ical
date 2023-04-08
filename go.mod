@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/GoogleCloudPlatform/functions-framework-go v1.6.1
-	github.com/arran4/golang-ical v0.0.0-20230213232137-07c6aad5e4f0
+	github.com/arran4/golang-ical v0.0.0-20230318005454-19abf92700cc
 	github.com/mmcdole/gofeed v1.2.1
 	github.com/stretchr/testify v1.8.2
 )
