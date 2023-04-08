@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/GoogleCloudPlatform/functions-framework-go/funcframework"
-	convert "github.com/mooseburgr/rss-to-ical-go"
+	convert "github.com/mooseburgr/rss-to-ical"
 )
 
 func main() {

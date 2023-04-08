@@ -1,11 +1,12 @@
-module github.com/mooseburgr/rss-to-ical-go
+module github.com/mooseburgr/rss-to-ical
 
-go 1.19
+go 1.20
 
 require (
 	github.com/GoogleCloudPlatform/functions-framework-go v1.6.1
 	github.com/arran4/golang-ical v0.0.0-20230213232137-07c6aad5e4f0
 	github.com/mmcdole/gofeed v1.2.1
+	github.com/stretchr/testify v1.8.2
 )
 
 require (
@@ -20,7 +21,6 @@ require (
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	github.com/stretchr/testify v1.8.2
 	go.uber.org/atomic v1.9.0 // indirect
 	go.uber.org/multierr v1.7.0 // indirect
 	go.uber.org/zap v1.19.1 // indirect

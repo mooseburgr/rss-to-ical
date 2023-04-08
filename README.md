@@ -1,4 +1,4 @@
-# rss-to-ical-go
+# rss-to-ical
 
 Do you have an RSS feed of events you want to import into a calendar manager as .ics / iCal content and for some reason don't want to use [existing services](https://zapier.com/apps/google-calendar/integrations/rss/1449/create-google-calendar-events-from-rss-feed-items) to solve this problem??
 
