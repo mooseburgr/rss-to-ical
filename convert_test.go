@@ -1,7 +1,7 @@
 package p
 
 import (
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"strings"
@@ -23,7 +23,7 @@ func TestHandler(t *testing.T) {
 	resp := w.Result()
 	defer resp.Body.Close()
 
-	data, _ := ioutil.ReadAll(resp.Body)
+	data, _ := io.ReadAll(resp.Body)
 
 	assert.NotEmpty(t, string(data))
 }
