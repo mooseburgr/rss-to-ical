@@ -13,7 +13,7 @@ steps:
     - convert-rss-to-ical
     - --region=us-central1
     - --trigger-http
-    - --runtime=go120
+    - --runtime=go121
     - --entry-point=HandleRequest
     - --gen2
     - --allow-unauthenticated

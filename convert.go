@@ -4,8 +4,10 @@ package p
 import (
 	"fmt"
 	"log"
+	"log/slog"
 	"net/http"
 	"net/url"
+	"os"
 	"strconv"
 	"strings"
 	"time"
@@ -13,6 +15,12 @@ import (
 	ical "github.com/arran4/golang-ical"
 	"github.com/mmcdole/gofeed"
 )
+
+var logger *slog.Logger
+
+func init() {
+	logger = slog.New(slog.NewJSONHandler(os.Stdout, nil))
+}
 
 // HandleRequest Fetches RSS feed of events located at request param "rssUrl" and
 // converts to iCal format with the specified "eventDuration," defaulting to 60
@@ -22,28 +30,36 @@ func HandleRequest(w http.ResponseWriter, r *http.Request) {
 	// validate URL param
 	rssUrl := r.URL.Query().Get("rssUrl")
 	if _, err := url.ParseRequestURI(rssUrl); err != nil {
+		logger.Warn("rssUrl parse err: " + err.Error())
 		http.Error(w, "Invalid URL: "+err.Error(), http.StatusBadRequest)
 		return
 	}
 	// default to event duration of 60min if invalid or unspecified
 	eventDuration, err := strconv.Atoi(r.URL.Query().Get("eventDuration"))
 	if err != nil {
+		logger.Debug("atoi err: " + err.Error())
 		eventDuration = 60
 	}
 
-	fmt.Printf("Handling params %s, %d from remote address '%s'",
-		rssUrl, eventDuration, GetIpAddress(r))
+	logger.Info("handling request params from remote address",
+		slog.String("rssUrl", rssUrl),
+		slog.Int("eventDuration", eventDuration),
+		slog.String("ip", GetIpAddress(r)),
+	)
 
 	cal, err := doConvert(rssUrl, eventDuration)
-
 	if err != nil {
+		logger.Warn("err parsing feed: " + err.Error())
 		http.Error(w, "Error parsing feed: "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 
 	// write to response
 	w.Header().Add("Content-Type", "text/calendar")
-	w.Write([]byte(cal.Serialize()))
+	_, err = w.Write([]byte(cal.Serialize()))
+	if err != nil {
+		logger.Error("err writing response: " + err.Error())
+	}
 }
 
 func doConvert(rssUrl string, eventDuration int) (*ical.Calendar, error) {
