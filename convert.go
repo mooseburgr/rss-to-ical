@@ -3,7 +3,6 @@ package p
 
 import (
 	"fmt"
-	"log"
 	"log/slog"
 	"net/http"
 	"net/url"
@@ -42,9 +41,9 @@ func HandleRequest(w http.ResponseWriter, r *http.Request) {
 	}
 
 	logger.Info("handling request params from remote address",
-		slog.String("rssUrl", rssUrl),
-		slog.Int("eventDuration", eventDuration),
-		slog.String("ip", GetIpAddress(r)),
+		"rssUrl", rssUrl,
+		"eventDuration", eventDuration,
+		"ip", GetIpAddress(r),
 	)
 
 	cal, err := doConvert(rssUrl, eventDuration)
@@ -68,10 +67,10 @@ func doConvert(rssUrl string, eventDuration int) (*ical.Calendar, error) {
 	fp := gofeed.NewParser()
 	feed, err := fp.ParseURL(rssUrl)
 	if err != nil {
-		log.Printf("Error parsing feed: %v", err)
+		logger.Warn("error parsing feed: " + err.Error())
 		return nil, err
 	}
-	log.Print("Fetched feed: ", feed.Title)
+	logger.Info("fetched feed: " + feed.Title)
 
 	// convert to ical
 	cal := ical.NewCalendar()
