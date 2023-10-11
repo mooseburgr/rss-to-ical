@@ -3,14 +3,14 @@ module github.com/mooseburgr/rss-to-ical
 go 1.21
 
 require (
-	github.com/GoogleCloudPlatform/functions-framework-go v1.7.4
+	github.com/GoogleCloudPlatform/functions-framework-go v1.8.0
 	github.com/arran4/golang-ical v0.1.0
 	github.com/mmcdole/gofeed v1.2.1
 	github.com/stretchr/testify v1.8.4
 )
 
 require (
-	cloud.google.com/go/functions v1.13.0 // indirect
+	cloud.google.com/go/functions v1.15.1 // indirect
 	github.com/PuerkitoBio/goquery v1.8.1 // indirect
 	github.com/andybalholm/cascadia v1.3.1 // indirect
 	github.com/cloudevents/sdk-go/v2 v2.14.0 // indirect
