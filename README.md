@@ -15,3 +15,9 @@ _BUT_ if you do, you can use this Google Cloud Function to do this content massa
 Credit to the following packages doing about 99.9% of the work:
  - https://github.com/mmcdole/gofeed
  - https://github.com/arran4/golang-ical
+
+
+## Rapid API
+
+Rapid API listing:
+https://rapidapi.com/kylejohnsonmn-7vy1VSLzbvA/api/rss-to-ical
