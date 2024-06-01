@@ -1,7 +1,7 @@
 pull_request_rules:
   - name: Automatic merge ⬇️ on approval ✔
     conditions:
-      - "#approved-reviews-by>=1"
+      - '#approved-reviews-by>=1'
     actions:
       merge:
         method: squash
@@ -9,11 +9,11 @@ pull_request_rules:
   - name: automatic merge for Dependabot, Renovate, or Snyk pull requests
     conditions:
       - and:
-        - check-success=build
-        - or:
-          - author=dependabot[bot]
-          - author=renovate[bot]
-          - author=snyk-bot
+          - check-success=build
+          - or:
+              - author=dependabot[bot]
+              - author=renovate[bot]
+              - author=snyk-bot
     actions:
       merge:
         method: squash
