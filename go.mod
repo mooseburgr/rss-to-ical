@@ -1,9 +1,10 @@
 module github.com/mooseburgr/rss-to-ical
 
 go 1.23.4
+toolchain go1.24.1
 
 require (
-	github.com/GoogleCloudPlatform/functions-framework-go v1.9.1
+	github.com/GoogleCloudPlatform/functions-framework-go v1.9.2
 	github.com/arran4/golang-ical v0.3.2
 	github.com/mmcdole/gofeed v1.3.0
 	github.com/stretchr/testify v1.10.0
