@@ -6,7 +6,7 @@ toolchain go1.25.1
 
 require (
 	github.com/GoogleCloudPlatform/functions-framework-go v1.9.2
-	github.com/arran4/golang-ical v0.3.2
+	github.com/arran4/golang-ical v0.3.5
 	github.com/mmcdole/gofeed v1.3.0
 	github.com/stretchr/testify v1.11.1
 )
