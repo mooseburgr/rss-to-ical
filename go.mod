@@ -1,6 +1,6 @@
 module github.com/mooseburgr/rss-to-ical
 
-go 1.23.4
+go 1.26.2
 
 toolchain go1.26.2
 
