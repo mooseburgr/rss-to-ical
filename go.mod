@@ -2,7 +2,7 @@ module github.com/mooseburgr/rss-to-ical
 
 go 1.26.2
 
-toolchain go1.26.2
+toolchain go1.27.1
 
 require (
 	github.com/GoogleCloudPlatform/functions-framework-go v1.9.2
