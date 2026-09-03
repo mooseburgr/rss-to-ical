@@ -2,13 +2,11 @@ module github.com/mooseburgr/rss-to-ical
 
 go 1.26.2
 
-toolchain go1.26.2
-
 require (
 	github.com/GoogleCloudPlatform/functions-framework-go v1.9.2
 	github.com/arran4/golang-ical v0.3.5
 	github.com/mmcdole/gofeed v1.3.0
-	github.com/stretchr/testify v1.11.1
+	github.com/stretchr/testify v1.12.1
 )
 
 require (
@@ -25,6 +23,7 @@ require (
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.0 // indirect
+	go.yaml.in/yaml/v3 v3.0.5 // indirect
 	golang.org/x/net v0.38.0 // indirect
 	golang.org/x/text v0.23.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
